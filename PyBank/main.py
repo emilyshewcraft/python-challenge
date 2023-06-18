@@ -9,8 +9,8 @@ csvpath = os.path.join("Resources", "budget_data.csv")
 with open(csvpath, encoding='UTF-8') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
-    # Skip header row
-    next(csvreader, None)  
+    # Store header row (skip while looping through csvreader)
+    header = next(csvreader, None)  
 
     # Set starting variables before looping through rows...
     # Variable to hold total profits:
